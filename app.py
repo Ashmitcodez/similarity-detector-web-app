@@ -8,7 +8,7 @@ from HashList import HashList
 from Fingerprint import Fingerprint
 from FindMatchPositions import FindMatchPositions
 from SimilarityScore import SimilarityScore
-
+import html
 
 # COMMENT STRIPPING:
 # Removes comments depending on language
