@@ -151,9 +151,7 @@ def get_fingerprint(file_obj, lang: str, k: int, t: int):
 def highlight_matches(text: str, match_positions, k):
     """
     Highlight matching regions in a text string using HTML <mark> tags.
-
-    For each position in match_positions, k characters starting from that
-    position (1-based) are marked as matched.
+    Safely escapes special characters (<, >, &) so they don't break HTML rendering.
 
     Parameters
     ----------
@@ -175,14 +173,16 @@ def highlight_matches(text: str, match_positions, k):
             pos = start - 1 + i
             if pos < len(text):
                 matched.add(pos)
+
     highlighted = ""
     for i, ch in enumerate(text):
+        safe_char = html.escape(ch)  # escape special HTML chars
         if i in matched:
-            highlighted += f"<mark>{ch}</mark>"
+            highlighted += f"<mark>{safe_char}</mark>"
         else:
-            highlighted += ch
+            highlighted += safe_char
     return highlighted
-
+    
 # UI SETUP:
 # Set a consistent font for clarity
 st.markdown(
