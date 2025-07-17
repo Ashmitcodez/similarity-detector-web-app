@@ -34,15 +34,15 @@ The app then:
 
 
 ## 📂 File Structure
-`app.py` # Main Streamlit app
-`StripString.py` # Helper for text normalization
-`Kgram.py` # Helper for k‑gram generation
-`HashList.py` # Helper for hashing k‑grams
-`Fingerprint.py` # Helper for winnowing fingerprint
-`FindMatchPositions.py` # Helper to find match positions
-`SimilarityScore.py` # Helper to compute similarity score
-`requirements.txt` # Dependencies for deployment
-`README.md` # This file
+-`app.py` # Main Streamlit app
+-`StripString.py` # Helper for text normalization
+-`Kgram.py` # Helper for k‑gram generation
+-`HashList.py` # Helper for hashing k‑grams
+-`Fingerprint.py` # Helper for winnowing fingerprint
+-`FindMatchPositions.py` # Helper to find match positions
+-`SimilarityScore.py` # Helper to compute similarity score
+-`requirements.txt` # Dependencies for deployment
+-`README.md` # This file
 
 
 ## Running the app Locally
