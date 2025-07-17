@@ -19,7 +19,6 @@ The app then:
 - Uses **independent scrollable panels** for long content.
 - Caches fingerprints in memory for faster repeated comparisons.
 
----
 
 ## Features
 - Highlights matched substrings in side‑by‑side panels.
