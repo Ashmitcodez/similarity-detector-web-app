@@ -33,16 +33,24 @@ The app then:
 - Cached fingerprints for instant re‑comparisons.
 
 
-## 📂 File Structure
-- `app.py` # Main Streamlit app
-- `StripString.py` # Helper for text normalization
-- `Kgram.py` # Helper for k‑gram generation
-- `HashList.py` # Helper for hashing k‑grams
-- `Fingerprint.py` # Helper for winnowing fingerprint
-- `FindMatchPositions.py` # Helper to find match positions
-- `SimilarityScore.py` # Helper to compute similarity score
-- `requirements.txt` # Dependencies for deployment
-- `README.md` # This file
+## File Descriptions
+
+| File | Description |
+|------|-------------|
+| **app.py** | Main Streamlit application. Handles the user interface, file uploads, parameter inputs, runs the similarity comparison, and displays results in scrollable panels with highlighted matches. |
+| **StripString.py** | Contains logic to normalize input text by stripping whitespace and irrelevant characters before further processing. |
+| **Kgram.py** | Generates k‑grams (substrings of length *k*) from the normalized text. |
+| **HashList.py** | Converts each k‑gram into a rolling hash value for efficient comparison. |
+| **hash31.py** | Implements the specific hash function (modular arithmetic with base 31) used for k‑gram hashing. |
+| **Window.py** | Splits the hash list into overlapping windows based on the guarantee threshold (*t*) and prepares them for winnowing. |
+| **RightMin.py** | Utility to select the rightmost minimal hash in a window (core step in winnowing). |
+| **Fingerprint.py** | Core winnowing implementation. Uses the windows and `RightMin` to produce a set of fingerprints for a document. |
+| **Winnow.py** | Orchestrates the winnowing process, may combine multiple steps (depending on your implementation). |
+| **FindMatchPositions.py** | Compares two sets of fingerprints and determines positions in each file where matches occur. |
+| **FindMatchIndices.py** | Helper to locate indices of matching fingerprints (low-level matching logic). |
+| **SimilarityScore.py** | Calculates similarity percentages based on matched positions and total length. |
+| **README.md** | This documentation file that explains the project, its usage, and its components. |
+
 
 
 ## Running the app Locally
