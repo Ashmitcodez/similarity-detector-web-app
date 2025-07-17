@@ -1,5 +1,5 @@
 # similarity-detector-web-app
-This project is an interactive Streamlit web app that detects and visualizes textual similarity between files. It is designed to help you compare programming code files (C, C++, Java, Python, MATLAB) or plain text files and quickly spot matching regions.
+This project is an interactive Streamlit web app that detects and visualizes textual similarity between files. It is designed to help you compare programming code files (C, C++, Java, Python, MATLAB) or plain text files and quickly spot matching regions. It works similarly to a MOSS (Measure of similarity software).
 
 # Multi‑Language Similarity Detector
 
@@ -32,7 +32,6 @@ The app then:
 - Compare one main file against many others at once.
 - Cached fingerprints for instant re‑comparisons.
 
----
 
 ## 📂 File Structure
 `app.py` # Main Streamlit app
@@ -45,7 +44,6 @@ The app then:
 `requirements.txt` # Dependencies for deployment
 `README.md` # This file
 
----
 
 ## Running the app Locally
 1. Install Python 3.9+.
@@ -53,7 +51,8 @@ The app then:
    ```bash
    pip install -r requirements.txt
 3. Run the app:
-   ```streamlit run app.py
+   ```bash
+   streamlit run app.py
 4. Open the local URL provided 
 
 ---
