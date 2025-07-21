@@ -1,5 +1,6 @@
 # similarity-detector-web-app
 https://similarity-detector.streamlit.app/ 
+(I have noticed that the app needs to be re-deployed on my end after every 1 or 2 days of inactivity on the site, so please inform me if the website is down, but u want to view the website)
 
 This project is an interactive Streamlit web app that detects and visualizes textual similarity between files. It is designed to help you compare programming code files (C, C++, Java, Python, MATLAB) or plain text files and quickly spot matching regions. It works similarly to a MOSS (Measure of similarity software).
 
