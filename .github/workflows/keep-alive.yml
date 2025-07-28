@@ -1,27 +1,25 @@
-
 name: Keep Streamlit Alive
 
-permissions:
-  contents: write
+on:
+  schedule:
+    - cron: '0 */2 * * *'   # every 2 hours
+  workflow_dispatch:         # allow manual run to test
 
 jobs:
   keep_alive:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      # Add your keep-alive logic here
-      - name: Update timestamp file
+      - name: Set Git identity
         run: |
-          date > keep-alive.txt
-
-      - name: Commit and push changes
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "github-actions[bot]"
-          git add keep-alive.txt
-          git commit -m "chore: keep-alive $(date -u)"
-          git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Make empty commit
+        run: |
+          git commit --allow-empty -m "chore: keep-alive $(date)"
+          git push
